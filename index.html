@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Redes de canciones</title>
+  <meta name="description" content="Construyendo una red interactiva de visualizació">
+  <meta name="autor/data" content="Jim Vallandingham/last.fm">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <header>
+    <h1>Una red de canciones parecidas: network analytics visualizada!</h1>
+    <p>De acuerdo al portal radial <a href="http://www.last.fm/api">last.fm</a>,  algunas de las canciones más populares tienen un estrecho vínculo entre sí; por lo que su éxito estaria lejos de ser una simple coincidencia. En base a la data recolectada esta emisión radial, he reproducido el trabajo de Jim Vallandingham como un ejercicio de data viz! 
+
+    <strong>Tener en cuenta al poner el ojo en la red:<strong> el área de los nodos está basado en el la el número de reproducciones de dicho tema y cada colo representa un artistas diferente!</p>
+    </header>
+
+      <div id="song_selection" class="control">
+        <h3>Canciones</h3>
+        <select id="song_select">
+          <option value="call_me_al.json">You Can Call Me Al</option>
+          <option value="sledgehammer_2_rounds.json">Sledgehammer</option>
+          <option value="poker_face.json">Poker Face</option>
+          <option value="jolene.json">Jolene</option>
+          <option value="helplessness_blues.json">Helplessness Blues</option>
+          <option value="she_said.json">She Said She Said</option>
+          <option value="short_skirt.json">Short Skirt, Long Jacket</option>
+        </select>
+
+      </div>
+    <div id="controls">
+      <div id="layouts" class="control">
+        <h3>Diseño</h3>
+        <a id="force" class="active">Dirigido por 'Fuerza'</a>
+        <a id="radial">Artistas</a>
+      </div>
+      <div id="filters" class="control">
+        <h3>Filtro</h3>
+        <a id="all" class="active">todos</a>
+        <a id="popular">Populares</a>
+        <a id="obscure">Caletas</a>
+      </div>
+      <div id="sorts" class="control">
+        <h3>Ordernar por:</h3>
+        <a id="songs" class="active">Canciones</a>
+        <a id="links">vinculos</a>
+      </div>
+      <div id="search_section" class="control">
+        <form id="search_form" action=""  method="post">
+          <p class="search_title">Búsqueda<input type="text" class="text-input" id="search" value="" /></p>
+        </form>
+      </div>
+    <div id="main" role="main">
+      <div id="vis"></div>
+    </div>
+    <footer>
+    <p>Data extraída de <a href="http://www.last.fm/api/show/track.getSimilar">last.fm</a>. Modelo inspirado en el trabajo de <a href="http://vallandingham.me/">Jim Vallandingham.</a><br/>Las canciones seleccionadas han sido definidas en base a playcounts que superan la media del resto de canciones enlistadas en la web.</p>
+
+    </footer>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.v2.js"></script>
+  <script src="js/Tooltip.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
