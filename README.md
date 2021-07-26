@@ -1,2 +1,2 @@
-# Network_viz
-Inspired in Jim Vallendingham work, I recreated a network of songs played by last.fm radio.
+# Network Viz (In spanish)
+De acuerdo al portal radial last.fm, algunas de las canciones más populares tienen un estrecho vínculo entre sí; por lo que su éxito estaria lejos de ser una simple coincidencia. En base a la data recolectada esta emisión radial, he reproducido el trabajo de Jim Vallandingham como un ejercicio de data viz! Tener en cuenta al poner el ojo en la red: el área de los nodos está basado en el la el número de reproducciones de dicho tema y cada colo representa un artistas diferente!
